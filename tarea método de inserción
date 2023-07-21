@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+    int num[] = {3, 4, 2, 1, 5, 8, 9, 11, 13, 10, 6, 12, 7};
+    int i, pos, var;
+
+    for (i = 0; i < 13; i++) {
+        pos = i;
+        var = num[i];
+
+        while ((pos > 0) && (num[pos - 1] > var)) {
+            num[pos] = num[pos - 1];
+            pos--;
+        }
+        num[pos] = var;
+    }
+
+    cout << "Orden Ascendente: ";
+    for (i = 0; i < 13; i++) {
+        cout << num[i] << " ";
+    }
+
+    cout << "\nOrden Descendente: ";
+    for (i = 12; i >= 0; i--) {
+        cout << num[i] << " ";
+    }
+
+    return 0;
+}
